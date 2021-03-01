@@ -92,7 +92,7 @@ And the mean RMSE is 0.31, below 0.35 as the rubric requested.
 https://youtu.be/Gc0H8hfHD-c
 <img src='images/step2-resnet.png'/>
 
-EKF follows this fast car without problems. At the end, the tracker deletes the track once it falls outside the field-of-view. However, the tracker takes some time until it finally confirms the track. Why? I programmed the tracker to be skeptical enough to reject the ghosts tracks in Step 4. 
+EKF follows this fast car without problems. At the end, the tracker deletes the track once it falls outside the field-of-view. However, the tracker takes some time until it finally confirms the track. Why? Because I programmed the tracker to be skeptical enough to reject the ghosts tracks in Step 4. 
 
 **RMSE through time (Step 2)**<br/>
 <img src='images/RMSE2.png'/>
