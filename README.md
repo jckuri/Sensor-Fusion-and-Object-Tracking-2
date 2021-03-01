@@ -1,24 +1,3 @@
-**[SDCE ND] Sensor Fusion and Object Tracking (Step 1, Resnet) [Submission 2]**<br/>
-https://youtu.be/d9EZSFHPsio
-<img src='images/step1-resnet.png'/>
-
-**[SDCE ND] Sensor Fusion and Object Tracking (Step 2, Resnet) [Submission 2]**<br/>
-https://youtu.be/Gc0H8hfHD-c
-<img src='images/step2-resnet.png'/>
-
-**[SDCE ND] Sensor Fusion and Object Tracking (Step 4, Resnet) [Submission 2]**<br/>
-https://youtu.be/k-RrG9VT9Kk
-<img src='images/step4-resnet.png'/>
-
-**[SDCE ND] Sensor Fusion and Object Tracking (Step 4, Darknet) [Submission 2]**<br/>
-https://youtu.be/AiZo0Lup4XI
-<img src='images/step4-darknet.png'/>
-
-**[SDCE ND] Sensor Fusion and Object Tracking (Step 4, Ground Truth) [Submission 2]**<br/>
-https://youtu.be/Dl25MHOwtD8
-<img src='images/step4-ground-truth.png'/>
-
-
 # Sensor Fusion and Object Tracking
 Self-Driving Car Engineer Nanodegree<br/>
 https://www.udacity.com/course/self-driving-car-engineer-nanodegree--nd013
@@ -95,9 +74,9 @@ Moreover, I should try the "Stand Out Suggestions":
 
 ## Results
 
-**[SDCE ND] Sensor Fusion and Object Tracking (Step 1)**<br/>
-https://youtu.be/slhJJ3BBzGA<br/>
-<img src='images/step1-video.png'/>
+**[SDCE ND] Sensor Fusion and Object Tracking (Step 1, Resnet) [Submission 2]**<br/>
+https://youtu.be/d9EZSFHPsio
+<img src='images/step1-resnet.png'/>
 
 The tracker (EKF) follows the car smoothly.
 
@@ -106,9 +85,9 @@ The tracker (EKF) follows the car smoothly.
 
 And the mean RMSE is 0.31, below 0.35 as the rubric requested.
 
-**[SDCE ND] Sensor Fusion and Object Tracking (Step 2)**<br/>
-https://youtu.be/yj8v9OILTUo<br/>
-<img src='images/step2-video.png'/>
+**[SDCE ND] Sensor Fusion and Object Tracking (Step 2, Resnet) [Submission 2]**<br/>
+https://youtu.be/Gc0H8hfHD-c
+<img src='images/step2-resnet.png'/>
 
 EKF follows this fast car without problems. However, at the end, EKF is still predicting the car position, beyond the field-of-view. Why? I implemented this behavior on purpose in order to keep tracking the difficult examples of Step 4, in which 1 car in some parts of the video doesn't have measurements for a long time. If I delete such tracks without measurements too soon, EKF won't follow the 2 important cars from the beginning to the end, as the rubric requested. But it is very easy to delete old tracks. It is just about tuning the parameters in this code:
 
@@ -137,9 +116,9 @@ Such big RMSE at the end is caused by the fact I keep tracks without measurement
 
 Step 3 is the same experiment in Step 4. So, I didn't upload a video of Step 3. And I will explain the RMSEs of Step 3 in Step 4.
 
-**[SDCE ND] Sensor Fusion and Object Tracking (Step 4)**<br/>
-https://youtu.be/ZWA0pGVKmP8<br/>
-<img src='images/step4-video.png'/>
+**[SDCE ND] Sensor Fusion and Object Tracking (Step 4, Resnet) [Submission 2]**<br/>
+https://youtu.be/k-RrG9VT9Kk
+<img src='images/step4-resnet.png'/>
 
 EKF follows the 2 important cars smoothly without problems. But in the time period from second 10th to second 13th, where there are no measurements in 1 car, the mean RMSE increases slightly. In this part, EKF predicts the car movements in an imperfect way, given there are no measurements. After that, the car recovers its measurements and its tracking. This error is not my fault because the precomputed results that Udacity gave us lack many measurements in big gaps. Fortunately, I did my best to follow the 2 important cars from the beginning to the end, without losing the track. And I obtained a decent mean RMSE for the 2 important cars: 0.40 and 0.14.
 
@@ -148,14 +127,21 @@ EKF follows the 2 important cars smoothly without problems. But in the time peri
 
 Track 0 (blue) and track 1 (orange) are the 2 important cars whose tracking was never lost. Track 0 (blue) increases its RMSEs slightly from second 10th to second 13th, when there are no measurements. Track 4 (green) is the car in the far front that went beyond the field of view. Track 5 (red) is the black car whose precomputed detections shown no measurements until second 18th.
 
-**[SDCE ND] Sensor Fusion and Object Tracking (Step 4 with ground-truth labels)**<br/>
-https://youtu.be/DfNAdwFrbcE<br/>
-<img src='images/step4p-video.png'/>
+**[SDCE ND] Sensor Fusion and Object Tracking (Step 4, Ground Truth) [Submission 2]**<br/>
+https://youtu.be/Dl25MHOwtD8
+<img src='images/step4-ground-truth.png'/>
 
 When I use ground-truth labels, my tracker works perfectly and follows the 2 important cars, Track 0 (blue) and track 1 (orange), from the begining to the end with mean RMSEs of 0.13 and 0.06, as the rubric requested. Moreover, more confirmed tracks appear as a result of perfectly detecting the cars parked in the right side at the end of the video.
 
 **RMSE through time (Step 4 with ground-truth labels)**<br/>
-<img src='images/RMSE4P.png'/>
+<img src='images/RMSE4-GTL.png'/>
+
+**[SDCE ND] Sensor Fusion and Object Tracking (Step 4, Darknet) [Submission 2]**<br/>
+https://youtu.be/AiZo0Lup4XI
+<img src='images/step4-darknet.png'/>
+
+**RMSE through time (Step 4 with Darknet)**<br/>
+<img src='images/RMSE4-Darknet.png'/>
 
 ## Note for the reviewer:
 
