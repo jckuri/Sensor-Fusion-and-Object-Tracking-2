@@ -112,7 +112,7 @@ EKF follows the 2 important cars smoothly without problems. But in the time peri
 
 This error is not my fault because the precomputed results of `fpn_resnet` that Udacity gave us lack many lidar measurements in big gaps. Fortunately, I did my best to follow the 2 important cars from the beginning to the end, without losing the track. And I obtained a decent mean RMSE for the 2 important cars: 0.40 and 0.14.
 
-I debugged extensively this part. I thought I was not using camera measurements properly. But I tracked the flow of measurements throughout all the functions and I noticed that at most 1 lidar measurement and 1 camera measurement are being matched to each track in each frame. I changed the calculations of camera measurements slightly, changing signs and adding some quantities, producing disastrous errors. It means that my formulas without slight modifications are correct.
+I debugged extensively this part. I thought I was not using camera measurements properly. But I tracked the flow of measurements throughout all the functions and I noticed that at most 1 lidar measurement and 1 camera measurement are being matched to each track in each frame. Moreover, I changed the calculations of camera measurements slightly, changing signs and adding some quantities, producing disastrous errors. It means that my formulas without slight modifications are correct.
 
 **RMSE through time (Step 4)**<br/>
 <img src='images/RMSE4.png'/>
