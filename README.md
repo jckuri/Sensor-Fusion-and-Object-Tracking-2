@@ -130,6 +130,8 @@ When I use ground-truth labels, my tracker works perfectly and follows the 2 imp
 https://youtu.be/AiZo0Lup4XI
 <img src='images/step4-darknet.png'/>
 
+When I used the precomputed detections of `darknet`, lidar measurements have no big gaps of false negatives. And I obtained almost perfect results as the rubric requested. My tracker works perfectly and follows the 2 important cars, Track 0 (blue) and track 1 (orange), from the begining to the end with mean RMSEs of 0.18 and 0.17. Track 27 (green) is the black car that appeared in the middle of the video. There are only 3 confirmed tracks with mean RMSEs below 0.25. And all ghosts tracks were eliminated. My graph with only 3 confirmed tracks is very similar to the graph requested by the rubric. I'm so happy with my results now.
+
 **RMSE through time (Step 4 with Darknet)**<br/>
 <img src='images/RMSE4-Darknet.png'/>
 
