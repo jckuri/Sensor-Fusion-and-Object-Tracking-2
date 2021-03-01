@@ -13,4 +13,5 @@ https://youtu.be/k-RrG9VT9Kk
 [SDCE ND] Sensor Fusion and Object Tracking (Step 4, Darknet) [Submission 2]
 https://youtu.be/AiZo0Lup4XI
 
-
+[SDCE ND] Sensor Fusion and Object Tracking (Step 4, Ground Truth) [Submission 2]
+https://youtu.be/Dl25MHOwtD8
