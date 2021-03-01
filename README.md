@@ -21,12 +21,13 @@ Once you completed the first steps to install this project, it is time to downlo
 | FILES TO COPY | DIRECTORIES |
 | ------------- | -------------|
 | [`/student/loop_over_dataset_f4.py`](/student/loop_over_dataset_f4.py) | `/` |
-| `/student/association.py` | `/student/` |
-| `/student/filter.py` | `/student/` |
-| `/student/measurements.py` | `/student/` |
-| `/student/objdet_detect.py` | `/student/` |
-| `/student/trackmanagement.py` | `/student/` |
-| `/student/params.py` | `/misc/` |
+| [`/student/association.py`](`/student/association.py`) | `/student/` |
+| [`/student/filter.py`](`/student/filter.py`) | `/student/` |
+| [`/student/measurements.py`](`/student/measurements.py`) | `/student/` |
+| [`/student/objdet_detect.py`](`/student/objdet_detect.py`) | `/student/` |
+| [`/student/trackmanagement.py`](`/student/trackmanagement.py`) | `/student/` |
+| [`/student/params.py`](`/student/params.py`) | `/misc/` |
+| [`/student/evaluation.py`](`/student/evaluation.py`) | `/misc/` |
 
 Note: The directory `/` is relative to this project's directory.
 
