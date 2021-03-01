@@ -115,13 +115,13 @@ I debugged extensively this part. I thought I was not using camera measurements 
 **RMSE through time (Step 4)**<br/>
 <img src='images/RMSE4.png'/>
 
-Track 0 (blue) and track 1 (orange) are the 2 important cars whose tracking was never lost. Track 0 (blue) increases its RMSEs slightly from second 10th to second 13th, when there are no lidar measurements. Track 5 (red) is the black car whose precomputed detections shown no lidar measurements until second 18th.
+Track 0 (blue) and track 1 (orange) are the 2 important cars whose tracking was never lost. Track 0 (blue) increases its RMSEs slightly from second 10th to second 13th, when there are no lidar measurements. Track 10 (green) is the black car whose precomputed detections shown no lidar measurements until second 18th.
 
 **[SDCE ND] Sensor Fusion and Object Tracking (Step 4, Ground Truth) [Submission 2]**<br/>
 https://youtu.be/Dl25MHOwtD8
 <img src='images/step4-ground-truth.png'/>
 
-When I use ground-truth labels, my tracker works perfectly and follows the 2 important cars, Track 0 (blue) and track 1 (orange), from the begining to the end with mean RMSEs of 0.13 and 0.06, as the rubric requested. Moreover, more confirmed tracks appear as a result of perfectly detecting the cars parked in the right side at the end of the video.
+When I use ground-truth labels, my tracker works perfectly and follows the 2 important cars, Track 0 (blue) and track 1 (orange), from the begining to the end with mean RMSEs of 0.13 and 0.06, as the rubric requested. Track 10 (green) is the black car that appeared in the middle of the video and it was not fully confirmed until both lidar measurements and camera measurements intersected the fields of view. Track 15 (red) is a car parked in the right side at the end of the video.
 
 **RMSE through time (Step 4 with ground-truth labels)**<br/>
 <img src='images/RMSE4-GTL.png'/>
