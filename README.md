@@ -20,7 +20,7 @@ Once you completed the first steps to install this project, it is time to downlo
 
 | FILES TO COPY | DIRECTORIES |
 | ------------- | -------------|
-| `loop_over_dataset_f4.py` | `/` |
+| [`/student/loop_over_dataset_f4.py`](/student/loop_over_dataset_f4.py) | `/` |
 | `/student/association.py` | `/student/` |
 | `/student/filter.py` | `/student/` |
 | `/student/measurements.py` | `/student/` |
