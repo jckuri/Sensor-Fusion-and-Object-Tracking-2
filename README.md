@@ -90,27 +90,12 @@ And the mean RMSE is 0.31, below 0.35 as the rubric requested.
 https://youtu.be/Gc0H8hfHD-c
 <img src='images/step2-resnet.png'/>
 
-EKF follows this fast car without problems. However, at the end, EKF is still predicting the car position, beyond the field-of-view. Why? I implemented this behavior on purpose in order to keep tracking the difficult examples of Step 4, in which 1 car in some parts of the video doesn't have measurements for a long time. If I delete such tracks without measurements too soon, EKF won't follow the 2 important cars from the beginning to the end, as the rubric requested. But it is very easy to delete old tracks. It is just about tuning the parameters in this code:
-
-```
-        # delete old tracks   
-        to_be_deleted = []
-        for i in range(len(self.track_list)):
-            track = self.track_list[i]
-            P = track.P
-            if (track.state == 'initialized' and track.score <= 0.01 and len(track.assignments) >= 4) or \
-            (track.state == 'tentative' and track.score <= 0.2) or \
-            (track.state == 'confirmed' and track.score <= 0.2) or \
-            (P[0,0] > params.max_P or P[1,1] > params.max_P):
-                to_be_deleted.append(track)
-        for track in to_be_deleted:
-            self.delete_track(track)                
-```
+EKF follows this fast car without problems. At the end, the tracker deletes the track once it falls outside the field-of-view. However, the tracker takes some time until it finally confirms the track. Why? I programmed the tracker to be skeptical enough to reject the ghosts tracks in Step 4. 
 
 **RMSE through time (Step 2)**<br/>
 <img src='images/RMSE2.png'/>
 
-Such big RMSE at the end is caused by the fact I keep tracks without measurements for a long time. Because deleting old tracks too soon would make me fail the Step 4. Otherwise, the other RMSEs are below 0.2.
+The mean RMSE of this track is 0.03, which is very good!
 
 **RMSE through time (Step 3)**<br/>
 <img src='images/RMSE3.png'/>
@@ -121,12 +106,16 @@ Step 3 is the same experiment in Step 4. So, I didn't upload a video of Step 3. 
 https://youtu.be/k-RrG9VT9Kk
 <img src='images/step4-resnet.png'/>
 
-EKF follows the 2 important cars smoothly without problems. But in the time period from second 10th to second 13th, where there are no measurements in 1 car, the mean RMSE increases slightly. In this part, EKF predicts the car movements in an imperfect way, given there are no measurements. After that, the car recovers its measurements and its tracking. This error is not my fault because the precomputed results that Udacity gave us lack many measurements in big gaps. Fortunately, I did my best to follow the 2 important cars from the beginning to the end, without losing the track. And I obtained a decent mean RMSE for the 2 important cars: 0.40 and 0.14.
+EKF follows the 2 important cars smoothly without problems. But in the time period from second 10th to second 13th, where there are no lidar measurements in 1 car, the mean RMSE increases slightly. In this part, EKF predicts the car movements in an imperfect way, given there are no lidar measurements. After that, the car recovers its lidar measurements and its tracking. Notice that in the video I draw the camera measurements in yellow. In spite of the lack of lidar measurements, EKF updates the track with camera measurements, preventing the track from being deleted. However, camera measurements are ambiguous in the lines of ray tracing. Throughout these lines, any depth is valid and ambiguous. And that's why, without lidar measurements, the error followed the line of ray tracing. Watch the video.
+
+This error is not my fault because the precomputed results of `fpn_resnet` that Udacity gave us lack many lidar measurements in big gaps. Fortunately, I did my best to follow the 2 important cars from the beginning to the end, without losing the track. And I obtained a decent mean RMSE for the 2 important cars: 0.40 and 0.14.
+
+I debugged extensively this part. I thought I was not using camera measurements properly. But I tracked the flow of measurements throughout all the functions and I noticed that at most 1 lidar measurement and 1 camera measurement are being matched to each track in each frame. I changed the calculations of camera measurements slightly, changing signs and adding some quantities, producing disastrous errors. It means that my formulas without slight modifications are correct.
 
 **RMSE through time (Step 4)**<br/>
 <img src='images/RMSE4.png'/>
 
-Track 0 (blue) and track 1 (orange) are the 2 important cars whose tracking was never lost. Track 0 (blue) increases its RMSEs slightly from second 10th to second 13th, when there are no measurements. Track 4 (green) is the car in the far front that went beyond the field of view. Track 5 (red) is the black car whose precomputed detections shown no measurements until second 18th.
+Track 0 (blue) and track 1 (orange) are the 2 important cars whose tracking was never lost. Track 0 (blue) increases its RMSEs slightly from second 10th to second 13th, when there are no lidar measurements. Track 5 (red) is the black car whose precomputed detections shown no lidar measurements until second 18th.
 
 **[SDCE ND] Sensor Fusion and Object Tracking (Step 4, Ground Truth) [Submission 2]**<br/>
 https://youtu.be/Dl25MHOwtD8
