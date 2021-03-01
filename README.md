@@ -1,20 +1,22 @@
-# Sensor-Fusion-and-Object-Tracking-2
-Sensor-Fusion-and-Object-Tracking-2
-
-[SDCE ND] Sensor Fusion and Object Tracking (Step 1, Resnet) [Submission 2]
+**[SDCE ND] Sensor Fusion and Object Tracking (Step 1, Resnet) [Submission 2]**<br/>
 https://youtu.be/d9EZSFHPsio
+<img src='images/step1-resnet.png'/>
 
-[SDCE ND] Sensor Fusion and Object Tracking (Step 2, Resnet) [Submission 2]
+**[SDCE ND] Sensor Fusion and Object Tracking (Step 2, Resnet) [Submission 2]**<br/>
 https://youtu.be/Gc0H8hfHD-c
+<img src='images/step2-resnet.png'/>
 
-[SDCE ND] Sensor Fusion and Object Tracking (Step 4, Resnet) [Submission 2]
+**[SDCE ND] Sensor Fusion and Object Tracking (Step 4, Resnet) [Submission 2]**<br/>
 https://youtu.be/k-RrG9VT9Kk
+<img src='images/step4-resnet.png'/>
 
-[SDCE ND] Sensor Fusion and Object Tracking (Step 4, Darknet) [Submission 2]
+**[SDCE ND] Sensor Fusion and Object Tracking (Step 4, Darknet) [Submission 2]**<br/>
 https://youtu.be/AiZo0Lup4XI
+<img src='images/step4-darknet.png'/>
 
-[SDCE ND] Sensor Fusion and Object Tracking (Step 4, Ground Truth) [Submission 2]
+**[SDCE ND] Sensor Fusion and Object Tracking (Step 4, Ground Truth) [Submission 2]**<br/>
 https://youtu.be/Dl25MHOwtD8
+<img src='images/step4-ground-truth.png'/>
 
 
 # Sensor Fusion and Object Tracking
