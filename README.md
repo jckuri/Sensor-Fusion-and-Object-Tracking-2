@@ -134,7 +134,7 @@ https://youtu.be/AiZo0Lup4XI
 
 When I used the precomputed detections of `darknet`, lidar measurements have no big gaps of false negatives. And I obtained almost perfect results as the rubric requested. My tracker works perfectly and follows the 2 important cars, Track 0 (blue) and track 1 (orange), from the begining to the end with mean RMSEs of 0.18 and 0.17. Track 27 (green) is the black car that appeared in the middle of the video. There are only 3 confirmed tracks with mean RMSEs below 0.25. And all ghosts tracks were eliminated. My graph with only 3 confirmed tracks is very similar to the graph requested by the rubric. I'm so happy with my results now.
 
-In the video, the 3D boxes of cars sometimes disappear. I modified the visualization code to exclude 3D boxes whose vertices are outside the field of view. The problem is Darknet does not provide 3D information, making the calculation of 3D boxes more difficult. In spite of lacking 3D information, my tracker managed to obtain almost perfect results, which is amazing!
+In the video, the 3D boxes of cars sometimes disappear. But the 2D tracks are never lost. I modified the visualization code to exclude 3D boxes whose vertices are outside the field of view. The problem is Darknet does not provide 3D information when detecting 2D images, making the calculation of 3D boxes more difficult. In spite of lacking 3D information, my tracker managed to obtain almost perfect results, which is amazing! That's the magic of Kalman filters and sensor fusion.
 
 **RMSE through time (Step 4 with Darknet)**<br/>
 <img src='images/RMSE4-Darknet.png'/>
