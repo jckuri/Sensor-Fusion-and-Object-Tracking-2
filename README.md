@@ -141,6 +141,6 @@ In the video, the 3D boxes of cars sometimes disappear. But the 2D tracks are ne
 
 ## Note for the reviewer:
 
-I'm a reviewer candidate and my opportunity to obtain this certification expires in few hours. I don't know if Christopher will extend my deadline. So, please be kind when grading my solution. Notice that the precomputed detections of `fpn_resnet` given by Udacity have big gaps of false negatives. I did my best at tuning the parameters and algorithms of this project. However, the mean RMSE of Step 4 is slightly above of what the rubric asks. That's why I use the precomputed detections of `darknet` to fulfill the mean RMSE requested by the rubric. And now my results are almost perfect.
+Notice that the precomputed detections of `fpn_resnet` given by Udacity have big gaps of false negatives in the lidar measurements. I did my best at tuning the parameters and algorithms of this project. However, the mean RMSE of Step 4 is slightly above of what the rubric asks. That's why I use the precomputed detections of `darknet` to fulfill the mean RMSE requested by the rubric. And now my results are almost perfect.
 
 Here is the github repository of my solution: https://github.com/jckuri/Sensor-Fusion-and-Object-Tracking-2
